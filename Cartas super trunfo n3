@@ -1,0 +1,68 @@
+#include <stdio.h>
+
+int main(){
+    char estado[3];
+    char codigo[5];
+    char nome[100];
+    unsigned long int populacao;
+    float area;
+    float pib;
+    int pontosTuristicos;
+    float densidade;
+    float pibPercapita;
+    float superPoder;
+
+//lerCarta(Carta *carta),
+    printf("Estado: ");
+    scanf("%2s", carta > estado);
+    printf("Código: ");
+    scanf("%4s", carta > codigo);
+    printf("Nome: ");
+    scanf(" %[^\n]", carta > nome);
+    printf("População: ");
+    scanf("%lu", &carta > populacao);
+    printf("Área: ");
+    scanf("%f", &carta > area);
+    printf("PIB: ");
+    scanf("%f", &carta > pib);
+    printf("Pontos turísticos: ");
+    scanf("%d", &carta > pontosTuristicos);
+
+//calcularIndicadores(Carta * carta), 
+    carta > densidade = carta > populacao / carta > area;
+    carta > pib_per_capita = carta > pib / carta > populacao;
+    carta > superPoder = carta > populacao + carta > area + carta > pib +
+                         carta > pontosTuristicos + carta > pib_per_capita +
+                         (1.0f / carta > densidade);
+
+
+int compararMaior(float a, float b) 
+    return a > b ? 1 : 0;
+
+
+int compararMenor(float a, float b)
+    return a < b ? 1 : 0;
+
+
+int main() {
+    Carta carta1, carta2;
+
+    printf("Informe os dados da Carta 1:\n");
+    lerCarta(&carta1);
+    calcularIndicadores(&carta1);
+
+    printf("\nInforme os dados da Carta 2:\n");
+    lerCarta(&carta2);
+    calcularIndicadores(&carta2);
+
+    printf("\nComparação de Cartas:\n");
+    printf("População: Carta 1 venceu (%d)\n", compararMaior(carta1.populacao, carta2.populacao));
+    printf("Área: Carta 1 venceu (%d)\n", compararMaior(carta1.area, carta2.area));
+    printf("PIB: Carta 1 venceu (%d)\n", compararMaior(carta1.pib, carta2.pib));
+    printf("Pontos Turísticos: Carta 1 venceu (%d)\n", compararMaior(carta1.pontos_turisticos, carta2.pontos_turisticos));
+    printf("Densidade Populacional: Carta 1 venceu (%d)\n", compararMenor(carta1.densidade, carta2.densidade));
+    printf("PIB per Capita: Carta 1 venceu (%d)\n", compararMaior(carta1.pib_per_capita, carta2.pib_per_capita));
+    printf("Super Poder: Carta 1 venceu (%d)\n", compararMaior(carta1.super_poder, carta2.super_poder));
+
+    return 0;
+}
